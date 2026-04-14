@@ -306,11 +306,13 @@
     },
     "header": {
       "layers": [
-        "Top bar (darkest green #04361d)",
-        "Main header (primary green #0e4027 with logo, search, newsletter CTA)",
-        "Navigation bar (Rezepte, Schnelle Rezepte, Magazin, Über uns)"
+        "Top social strip (#0e4027 — social icons: Instagram, TikTok, YouTube, Pinterest, Facebook + NEWSLETTER link with white outline)",
+        "Main header (#0e4027 — logo icon + 'LECKERSCHMECKER' yellow wordmark left, uppercase nav links white right, search icon far right)"
       ],
-      "style": "Sticky, dark green, white text"
+      "nav_items": ["REZEPTE", "SCHNELLE REZEPTE", "MAGAZIN", "ÜBER UNS", "WAS KOCHE ICH HEUTE?"],
+      "logo_text_color": "#faeb5b",
+      "nav_text_color": "#FFFFFF",
+      "style": "Unified dark green header block, no separate nav bar"
     },
     "content_cards": {
       "recipe": "Image top + title + prep time badge + ingredient count below",
@@ -370,43 +372,57 @@
   "recipe_card": {
     "container": {
       "background": "#FFFFFF",
-      "color": "#0e4027",
-      "border_top": "3px solid #0e4027",
-      "border_radius": "0 0 5px 5px",
+      "border": "1px solid #ebebeb",
       "max_width": "720px",
       "margin": "28px 0",
-      "padding": "0",
-      "font_family": "Jost",
-      "font_size": "16px",
-      "line_height": "1.2em",
-      "box_shadow": "0 1px 4px rgba(0,0,0,0.06)",
       "overflow": "hidden"
     },
-    "header": {
-      "padding": "24px 24px 20px",
-      "border_bottom": "1px solid #ebebeb"
+    "top_section": {
+      "layout": "horizontal — photo LEFT (~42%), info RIGHT",
+      "photo": {
+        "width": "42%",
+        "object_fit": "cover",
+        "height": "100%"
+      },
+      "info": {
+        "padding": "24px",
+        "contains": ["title", "star rating", "author name", "action buttons"]
+      }
     },
     "title": {
       "font_family": "Jost",
-      "font_size": "22px",
+      "font_size": "24px",
       "font_weight": 700,
-      "color": "#0e4027",
+      "color": "#111111",
       "line_height": "1.2",
-      "margin_bottom": "16px"
+      "margin_bottom": "10px"
+    },
+    "star_rating": {
+      "color": "#c8a415",
+      "font_size": "20px",
+      "stars": 5,
+      "style": "outline stars (empty by default)"
+    },
+    "action_buttons": {
+      "labels": ["Rezept drucken", "Rezept pinnen"],
+      "background": "#0e4027",
+      "color": "#FFFFFF",
+      "font_size": "14px",
+      "font_weight": 600,
+      "padding": "9px 20px",
+      "icons": ["print icon", "Pinterest icon"]
     },
     "meta_bar": {
-      "display": "flex",
-      "gap": "24px",
-      "items": ["Zubereitungszeit", "Portionen", "Schwierigkeit"],
-      "item_layout": "icon + stacked label",
+      "layout": "flex row, equal columns with center text, divided by borders",
+      "items": ["Vorbereitungszeit", "Zubereitungszeit", "Gesamtzeit"],
       "item_font_size": "14px",
-      "item_color": "#444444",
-      "icon_size": "20px",
-      "icon_color": "#0e4027",
-      "strong_color": "#0e4027",
-      "strong_font_size": "15px",
+      "item_text_align": "center",
       "label_font_size": "12px",
-      "label_color": "#767676"
+      "label_color": "#767676",
+      "strong_font_size": "15px",
+      "strong_color": "#111111",
+      "border_right": "1px solid #ebebeb",
+      "border_bottom": "1px solid #ebebeb"
     },
     "section": {
       "padding": "20px 24px",
@@ -450,22 +466,6 @@
       "number_min_width": "24px",
       "last_step_border": "none"
     },
-    "action_buttons": {
-      "container_padding": "16px 24px 20px",
-      "container_border_top": "1px solid #ebebeb",
-      "display": "flex",
-      "gap": "10px",
-      "button_background": "#f9f9ed",
-      "button_color": "#0e4027",
-      "button_border": "1px solid #ebebeb",
-      "button_border_radius": "9999px",
-      "button_padding": "8px 18px",
-      "button_font_family": "Jost",
-      "button_font_size": "13px",
-      "button_font_weight": 600,
-      "button_hover_background": "#b2dcc0",
-      "labels": ["Drucken", "Speichern", "Teilen"]
-    },
     "css_variables": {
       "accent_color": "#0e4027",
       "main_background": "#FFFFFF",
@@ -485,14 +485,14 @@
       "padding": "28px 24px 0"
     },
     "breadcrumb": {
-      "font_size": "13px",
-      "color": "#767676",
+      "font_size": "12px",
+      "color": "#0e4027",
       "link_color": "#0e4027",
-      "link_font_weight": 500,
-      "separator": "›",
-      "separator_color": "#aaa",
-      "separator_margin": "0 6px",
-      "margin_bottom": "16px"
+      "link_font_weight": 600,
+      "separator": ", (comma-separated)",
+      "text_transform": "uppercase",
+      "letter_spacing": "0.03em",
+      "margin_bottom": "18px"
     },
     "title": {
       "font_size": "30px",
@@ -514,10 +514,11 @@
     },
     "hero_image": {
       "width": "100%",
-      "aspect_ratio": "4/3",
+      "aspect_ratio": "16/9",
       "object_fit": "cover",
       "margin_bottom": "20px",
-      "border_radius": "0px"
+      "border_radius": "0px",
+      "note": "Intro paragraph appears BEFORE the hero image"
     },
     "caption": {
       "font_size": "12px",
@@ -563,35 +564,37 @@
   },
   "inline_newsletter": {
     "container": {
-      "background": "#f9f9ed",
-      "border_radius": "5px",
-      "padding": "24px",
-      "margin": "24px 0",
-      "text_align": "center"
+      "background": "#faeb5b",
+      "border_radius": "0",
+      "padding": "28px 24px",
+      "margin": "28px 0",
+      "text_align": "left"
     },
     "heading": {
-      "font_size": "18px",
+      "text": "Rezept des Tages — unser Newsletter",
+      "font_size": "20px",
       "font_weight": 700,
       "color": "#0e4027",
       "margin_bottom": "6px"
     },
     "description": {
-      "font_size": "14px",
-      "color": "#555555",
+      "text": "Jeden Tag versorgen wir dich mit einer leckeren Rezeptidee.",
+      "font_size": "15px",
+      "color": "#333333",
       "margin_bottom": "14px",
       "line_height": "1.4"
     },
     "form": {
       "display": "flex",
-      "gap": "8px",
-      "max_width": "360px",
-      "margin": "0 auto"
+      "gap": "0",
+      "max_width": "420px"
     },
     "input": {
       "flex": "1",
-      "padding": "9px 14px",
-      "border": "1px solid #ebebeb",
-      "border_radius": "9999px",
+      "padding": "10px 14px",
+      "border": "1px solid #ccc",
+      "border_right": "none",
+      "border_radius": "0",
       "font_size": "14px",
       "font_family": "Jost",
       "focus_border_color": "#0e4027"
@@ -600,12 +603,16 @@
       "background": "#0e4027",
       "color": "#FFFFFF",
       "border": "none",
-      "border_radius": "9999px",
-      "padding": "9px 20px",
-      "font_size": "14px",
-      "font_weight": 600,
-      "font_family": "Jost",
+      "border_radius": "0",
+      "padding": "10px 16px",
+      "font_size": "18px",
+      "icon": "arrow/send icon",
       "hover_background": "#093b22"
+    },
+    "disclaimer": {
+      "font_size": "11px",
+      "color": "#555555",
+      "margin_top": "10px"
     }
   },
   "taboola_integration": {
