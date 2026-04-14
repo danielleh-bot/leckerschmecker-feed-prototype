@@ -371,12 +371,100 @@
     "container": {
       "background": "#FFFFFF",
       "color": "#0e4027",
-      "border_top": "1px solid #0e4027",
-      "max_width": "1600px",
-      "margin": "20px auto",
+      "border_top": "3px solid #0e4027",
+      "border_radius": "0 0 5px 5px",
+      "max_width": "720px",
+      "margin": "28px 0",
+      "padding": "0",
       "font_family": "Jost",
       "font_size": "16px",
-      "line_height": "1.2em"
+      "line_height": "1.2em",
+      "box_shadow": "0 1px 4px rgba(0,0,0,0.06)",
+      "overflow": "hidden"
+    },
+    "header": {
+      "padding": "24px 24px 20px",
+      "border_bottom": "1px solid #ebebeb"
+    },
+    "title": {
+      "font_family": "Jost",
+      "font_size": "22px",
+      "font_weight": 700,
+      "color": "#0e4027",
+      "line_height": "1.2",
+      "margin_bottom": "16px"
+    },
+    "meta_bar": {
+      "display": "flex",
+      "gap": "24px",
+      "items": ["Zubereitungszeit", "Portionen", "Schwierigkeit"],
+      "item_layout": "icon + stacked label",
+      "item_font_size": "14px",
+      "item_color": "#444444",
+      "icon_size": "20px",
+      "icon_color": "#0e4027",
+      "strong_color": "#0e4027",
+      "strong_font_size": "15px",
+      "label_font_size": "12px",
+      "label_color": "#767676"
+    },
+    "section": {
+      "padding": "20px 24px",
+      "border_bottom": "1px solid #ebebeb",
+      "last_section_border": "none"
+    },
+    "section_heading": {
+      "font_family": "Jost",
+      "font_size": "17px",
+      "font_weight": 700,
+      "color": "#0e4027",
+      "margin_bottom": "14px",
+      "text_transform": "none"
+    },
+    "ingredients_list": {
+      "list_style": "none",
+      "padding": "0",
+      "item_padding": "9px 0",
+      "item_border_bottom": "1px solid #f0f0f0",
+      "item_font_size": "15px",
+      "item_color": "#333333",
+      "item_line_height": "1.4",
+      "checkbox_size": "18px",
+      "checkbox_border": "2px solid #0e4027",
+      "checkbox_border_radius": "3px",
+      "checkbox_gap": "10px",
+      "last_item_border": "none"
+    },
+    "instructions_list": {
+      "list_style": "none",
+      "counter_style": "decimal",
+      "step_padding": "12px 0",
+      "step_border_bottom": "1px solid #f0f0f0",
+      "step_font_size": "15px",
+      "step_color": "#444444",
+      "step_line_height": "1.6",
+      "step_gap": "12px",
+      "number_color": "#0e4027",
+      "number_font_weight": 700,
+      "number_font_size": "16px",
+      "number_min_width": "24px",
+      "last_step_border": "none"
+    },
+    "action_buttons": {
+      "container_padding": "16px 24px 20px",
+      "container_border_top": "1px solid #ebebeb",
+      "display": "flex",
+      "gap": "10px",
+      "button_background": "#f9f9ed",
+      "button_color": "#0e4027",
+      "button_border": "1px solid #ebebeb",
+      "button_border_radius": "9999px",
+      "button_padding": "8px 18px",
+      "button_font_family": "Jost",
+      "button_font_size": "13px",
+      "button_font_weight": 600,
+      "button_hover_background": "#b2dcc0",
+      "labels": ["Drucken", "Speichern", "Teilen"]
     },
     "css_variables": {
       "accent_color": "#0e4027",
@@ -388,6 +476,136 @@
     "sponsor_label": {
       "background": "#b2dcc0",
       "text_color": "#000000"
+    }
+  },
+  "article_page": {
+    "layout": {
+      "max_width": "720px",
+      "margin": "0 auto",
+      "padding": "28px 24px 0"
+    },
+    "breadcrumb": {
+      "font_size": "13px",
+      "color": "#767676",
+      "link_color": "#0e4027",
+      "link_font_weight": 500,
+      "separator": "›",
+      "separator_color": "#aaa",
+      "separator_margin": "0 6px",
+      "margin_bottom": "16px"
+    },
+    "title": {
+      "font_size": "30px",
+      "font_weight": 700,
+      "line_height": "1.15",
+      "color": "#111111",
+      "margin_bottom": "16px"
+    },
+    "meta": {
+      "display": "flex",
+      "align_items": "center",
+      "gap": "10px",
+      "font_size": "13px",
+      "color": "#767676",
+      "author_avatar_size": "36px",
+      "author_name_color": "#0e4027",
+      "author_name_weight": 600,
+      "date_format": "DD.MM.YYYY - HH:MM Uhr"
+    },
+    "hero_image": {
+      "width": "100%",
+      "aspect_ratio": "4/3",
+      "object_fit": "cover",
+      "margin_bottom": "20px",
+      "border_radius": "0px"
+    },
+    "caption": {
+      "font_size": "12px",
+      "color": "#767676",
+      "margin_top": "-14px",
+      "margin_bottom": "20px"
+    },
+    "body": {
+      "font_size": "18px",
+      "line_height": "1.7",
+      "color": "#444444",
+      "paragraph_margin_bottom": "1.2em"
+    }
+  },
+  "social_sharing": {
+    "container": {
+      "display": "flex",
+      "align_items": "center",
+      "gap": "8px",
+      "margin_bottom": "20px",
+      "padding_bottom": "16px",
+      "border_bottom": "1px solid #ebebeb"
+    },
+    "label": {
+      "font_size": "12px",
+      "color": "#767676",
+      "font_weight": 500,
+      "margin_right": "4px"
+    },
+    "button": {
+      "width": "34px",
+      "height": "34px",
+      "border_radius": "50%",
+      "border": "1px solid #ebebeb",
+      "background": "#FFFFFF",
+      "color": "#555555",
+      "font_size": "15px",
+      "hover_background": "#f9f9ed",
+      "hover_border_color": "#0e4027",
+      "hover_color": "#0e4027"
+    },
+    "platforms": ["Facebook", "WhatsApp", "Pinterest", "E-Mail", "Link kopieren"]
+  },
+  "inline_newsletter": {
+    "container": {
+      "background": "#f9f9ed",
+      "border_radius": "5px",
+      "padding": "24px",
+      "margin": "24px 0",
+      "text_align": "center"
+    },
+    "heading": {
+      "font_size": "18px",
+      "font_weight": 700,
+      "color": "#0e4027",
+      "margin_bottom": "6px"
+    },
+    "description": {
+      "font_size": "14px",
+      "color": "#555555",
+      "margin_bottom": "14px",
+      "line_height": "1.4"
+    },
+    "form": {
+      "display": "flex",
+      "gap": "8px",
+      "max_width": "360px",
+      "margin": "0 auto"
+    },
+    "input": {
+      "flex": "1",
+      "padding": "9px 14px",
+      "border": "1px solid #ebebeb",
+      "border_radius": "9999px",
+      "font_size": "14px",
+      "font_family": "Jost",
+      "focus_border_color": "#0e4027"
+    },
+    "button": {
+      "background": "#0e4027",
+      "color": "#FFFFFF",
+      "border": "none",
+      "border_radius": "9999px",
+      "padding": "9px 20px",
+      "font_size": "14px",
+      "font_weight": 600,
+      "font_family": "Jost",
+      "hover_background": "#093b22"
     }
   },
   "taboola_integration": {
