@@ -238,27 +238,222 @@
     margin-bottom: 1.2em;
   }
 
-  /* Recipe card strip */
-  .recipe-strip {
+  /* Recipe Card Box */
+  .recipe-box {
     background: #fff;
-    border-top: 2px solid #0e4027;
-    padding: 16px 20px;
-    margin: 24px 0;
+    border-top: 3px solid #0e4027;
+    border-radius: 0 0 5px 5px;
+    margin: 28px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .recipe-box-header {
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .recipe-box-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0e4027;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .recipe-box-meta {
     display: flex;
     gap: 24px;
-    align-items: center;
   }
-  .recipe-strip .rs-icon {
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .recipe-strip .rs-info {
+  .recipe-box-meta-item {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 8px;
     font-size: 14px;
     color: #444;
   }
-  .recipe-strip .rs-info strong { color: #0e4027; }
+  .recipe-box-meta-item .meta-icon {
+    font-size: 20px;
+    color: #0e4027;
+  }
+  .recipe-box-meta-item strong {
+    color: #0e4027;
+    display: block;
+    font-size: 15px;
+  }
+  .recipe-box-meta-item .meta-label {
+    font-size: 12px;
+    color: #767676;
+    display: block;
+  }
+  .recipe-box-section {
+    padding: 20px 24px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .recipe-box-section:last-of-type {
+    border-bottom: none;
+  }
+  .recipe-box-section h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0e4027;
+    margin-bottom: 14px;
+  }
+  .recipe-ingredients {
+    list-style: none;
+    padding: 0;
+  }
+  .recipe-ingredients li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .recipe-ingredients li:last-child { border-bottom: none; }
+  .recipe-ingredients li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0e4027;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .recipe-instructions {
+    list-style: none;
+    padding: 0;
+    counter-reset: step;
+  }
+  .recipe-instructions li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    display: flex;
+    gap: 12px;
+    counter-increment: step;
+  }
+  .recipe-instructions li:last-child { border-bottom: none; }
+  .recipe-instructions li::before {
+    content: counter(step);
+    font-weight: 700;
+    color: #0e4027;
+    font-size: 16px;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .recipe-box-actions {
+    padding: 16px 24px 20px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #ebebeb;
+  }
+  .recipe-box-actions button {
+    font-family: 'Jost', sans-serif;
+    background: #f9f9ed;
+    color: #0e4027;
+    border: 1px solid #ebebeb;
+    border-radius: 9999px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .recipe-box-actions button:hover { background: #b2dcc0; }
+
+  /* Social Share Bar */
+  .social-share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .social-share-label {
+    font-size: 12px;
+    color: #767676;
+    font-weight: 500;
+    margin-right: 4px;
+  }
+  .social-share-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: #555;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .social-share-btn:hover {
+    background: #f9f9ed;
+    border-color: #0e4027;
+    color: #0e4027;
+  }
+
+  /* Inline Newsletter CTA */
+  .inline-newsletter {
+    background: #f9f9ed;
+    border-radius: 5px;
+    padding: 24px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .inline-newsletter h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0e4027;
+    margin-bottom: 6px;
+  }
+  .inline-newsletter p {
+    font-size: 14px !important;
+    color: #555 !important;
+    margin-bottom: 14px !important;
+    line-height: 1.4 !important;
+  }
+  .inline-newsletter-form {
+    display: flex;
+    gap: 8px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .inline-newsletter-form input {
+    flex: 1;
+    font-family: 'Jost', sans-serif;
+    padding: 9px 14px;
+    border: 1px solid #ebebeb;
+    border-radius: 9999px;
+    font-size: 14px;
+    outline: none;
+  }
+  .inline-newsletter-form input:focus { border-color: #0e4027; }
+  .inline-newsletter-form button {
+    font-family: 'Jost', sans-serif;
+    background: #0e4027;
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .inline-newsletter-form button:hover { background: #093b22; }
 
   /* ============================================
      FEED SEPARATOR
@@ -619,6 +814,7 @@
       </div>
       <div class="ls-header-right">
         <button class="ls-search-btn">&#128269; Suche</button>
+        <button class="ls-newsletter-btn">&#9993; Newsletter</button>
       </div>
     </div>
     <nav class="ls-nav">
@@ -642,17 +838,79 @@
         <span>&middot;</span>
         <span>14.04.2026 - 17:06 Uhr</span>
       </div>
+
+      <div class="social-share">
+        <span class="social-share-label">Teilen</span>
+        <button class="social-share-btn" title="Facebook">f</button>
+        <button class="social-share-btn" title="WhatsApp">W</button>
+        <button class="social-share-btn" title="Pinterest">P</button>
+        <button class="social-share-btn" title="E-Mail">&#9993;</button>
+        <button class="social-share-btn" title="Link kopieren">&#128279;</button>
+      </div>
+
       <img class="article-hero-img" src="https://www.leckerschmecker.me/wp-content/uploads/sites/6/2026/04/kaese-puffs-airfryer-ls.jpg?w=1200&h=900&crop=1" alt="K&auml;se-Puffs aus dem Airfryer">
+      <p class="article-caption">K&auml;se-Puffs aus dem Airfryer &mdash; knusprig, k&auml;sig, in 30 Minuten fertig. &copy; Leckerschmecker</p>
+
       <div class="article-body">
         <p>Knusprig, k&auml;sig und in nur 30 Minuten fertig: Diese K&auml;se-Puffs aus dem Airfryer sind der perfekte Snack, wenn es schnell gehen muss. Mit Bl&auml;tterteig und w&uuml;rzigem K&auml;se werden sie au&szlig;en goldbraun und innen herrlich fluffig.</p>
-        <p>Egal ob als Partysnack, f&uuml;rs Buffet oder einfach als Nachmittagsleckerei &mdash; diese kleinen Happen machen s&uuml;chtig und lassen sich wunderbar variieren.</p>
+        <p>Egal ob als Partysnack, f&uuml;rs Buffet oder einfach als Nachmittagsleckerei &mdash; diese kleinen Happen machen s&uuml;chtig und lassen sich wunderbar variieren. Wer mag, kann statt Gouda auch Cheddar, Feta oder einen w&uuml;rzigen Bergk&auml;se verwenden.</p>
+        <p>Das Beste: Der Airfryer macht die Puffs extra knusprig, ganz ohne viel &Ouml;l. So sind sie deutlich leichter als aus der Fritteuse, aber mindestens genauso lecker. Unser Tipp: Direkt die doppelte Menge machen &mdash; sie sind ruckzuck weg!</p>
       </div>
-      <div class="recipe-strip">
-        <div class="rs-icon">&#9201;</div>
-        <div class="rs-info">
-          <div><strong>30 Min.</strong><br>Zubereitungszeit</div>
-          <div><strong>4</strong><br>Portionen</div>
-          <div><strong>Einfach</strong><br>Schwierigkeit</div>
+
+      <div class="recipe-box">
+        <div class="recipe-box-header">
+          <h2 class="recipe-box-title">K&auml;se-Puffs aus dem Airfryer</h2>
+          <div class="recipe-box-meta">
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#9201;</span>
+              <div><strong>30 Min.</strong><span class="meta-label">Zubereitungszeit</span></div>
+            </div>
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#127860;</span>
+              <div><strong>4</strong><span class="meta-label">Portionen</span></div>
+            </div>
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#11088;</span>
+              <div><strong>Einfach</strong><span class="meta-label">Schwierigkeit</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-box-section">
+          <h3>Zutaten</h3>
+          <ul class="recipe-ingredients">
+            <li>1 Packung Bl&auml;tterteig (275 g)</li>
+            <li>200 g geriebener Gouda</li>
+            <li>100 g Frischk&auml;se</li>
+            <li>1 Ei</li>
+            <li>1 TL Paprikapulver</li>
+            <li>&frac12; TL Knoblauchpulver</li>
+            <li>Salz und Pfeffer</li>
+            <li>Sesam zum Bestreuen</li>
+          </ul>
+        </div>
+        <div class="recipe-box-section">
+          <h3>Zubereitung</h3>
+          <ol class="recipe-instructions">
+            <li>Frischk&auml;se mit geriebenem Gouda, Ei und Gew&uuml;rzen in einer Sch&uuml;ssel verr&uuml;hren.</li>
+            <li>Bl&auml;tterteig ausrollen und in 12 gleich gro&szlig;e Quadrate schneiden.</li>
+            <li>Je einen Essl&ouml;ffel K&auml;sef&uuml;llung auf jedes Quadrat geben und die Ecken zur Mitte falten.</li>
+            <li>K&auml;se-Puffs mit etwas Wasser bestreichen und mit Sesam bestreuen.</li>
+            <li>Im Airfryer bei 180 &deg;C etwa 12&ndash;15 Minuten goldbraun backen.</li>
+          </ol>
+        </div>
+        <div class="recipe-box-actions">
+          <button>Drucken</button>
+          <button>Speichern</button>
+          <button>Teilen</button>
+        </div>
+      </div>
+
+      <div class="inline-newsletter">
+        <h4>&#9993; T&auml;gliche Rezeptideen direkt ins Postfach</h4>
+        <p>Melde dich f&uuml;r unseren kostenlosen Newsletter an!</p>
+        <div class="inline-newsletter-form">
+          <input type="email" placeholder="Deine E-Mail-Adresse">
+          <button>Anmelden</button>
         </div>
       </div>
     </div>
@@ -790,17 +1048,79 @@
         <span>&middot;</span>
         <span>14.04.2026 - 17:06 Uhr</span>
       </div>
+
+      <div class="social-share">
+        <span class="social-share-label">Teilen</span>
+        <button class="social-share-btn" title="Facebook">f</button>
+        <button class="social-share-btn" title="WhatsApp">W</button>
+        <button class="social-share-btn" title="Pinterest">P</button>
+        <button class="social-share-btn" title="E-Mail">&#9993;</button>
+        <button class="social-share-btn" title="Link kopieren">&#128279;</button>
+      </div>
+
       <img class="article-hero-img" src="https://www.leckerschmecker.me/wp-content/uploads/sites/6/2026/04/kaese-puffs-airfryer-ls.jpg?w=1200&h=900&crop=1" alt="K&auml;se-Puffs aus dem Airfryer">
+      <p class="article-caption">K&auml;se-Puffs aus dem Airfryer &mdash; knusprig, k&auml;sig, in 30 Minuten fertig. &copy; Leckerschmecker</p>
+
       <div class="article-body">
         <p>Knusprig, k&auml;sig und in nur 30 Minuten fertig: Diese K&auml;se-Puffs aus dem Airfryer sind der perfekte Snack, wenn es schnell gehen muss. Mit Bl&auml;tterteig und w&uuml;rzigem K&auml;se werden sie au&szlig;en goldbraun und innen herrlich fluffig.</p>
-        <p>Egal ob als Partysnack, f&uuml;rs Buffet oder einfach als Nachmittagsleckerei &mdash; diese kleinen Happen machen s&uuml;chtig und lassen sich wunderbar variieren.</p>
+        <p>Egal ob als Partysnack, f&uuml;rs Buffet oder einfach als Nachmittagsleckerei &mdash; diese kleinen Happen machen s&uuml;chtig und lassen sich wunderbar variieren. Wer mag, kann statt Gouda auch Cheddar, Feta oder einen w&uuml;rzigen Bergk&auml;se verwenden.</p>
+        <p>Das Beste: Der Airfryer macht die Puffs extra knusprig, ganz ohne viel &Ouml;l. So sind sie deutlich leichter als aus der Fritteuse, aber mindestens genauso lecker. Unser Tipp: Direkt die doppelte Menge machen &mdash; sie sind ruckzuck weg!</p>
       </div>
-      <div class="recipe-strip">
-        <div class="rs-icon">&#9201;</div>
-        <div class="rs-info">
-          <div><strong>30 Min.</strong><br>Zubereitungszeit</div>
-          <div><strong>4</strong><br>Portionen</div>
-          <div><strong>Einfach</strong><br>Schwierigkeit</div>
+
+      <div class="recipe-box">
+        <div class="recipe-box-header">
+          <h2 class="recipe-box-title">K&auml;se-Puffs aus dem Airfryer</h2>
+          <div class="recipe-box-meta">
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#9201;</span>
+              <div><strong>30 Min.</strong><span class="meta-label">Zubereitungszeit</span></div>
+            </div>
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#127860;</span>
+              <div><strong>4</strong><span class="meta-label">Portionen</span></div>
+            </div>
+            <div class="recipe-box-meta-item">
+              <span class="meta-icon">&#11088;</span>
+              <div><strong>Einfach</strong><span class="meta-label">Schwierigkeit</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-box-section">
+          <h3>Zutaten</h3>
+          <ul class="recipe-ingredients">
+            <li>1 Packung Bl&auml;tterteig (275 g)</li>
+            <li>200 g geriebener Gouda</li>
+            <li>100 g Frischk&auml;se</li>
+            <li>1 Ei</li>
+            <li>1 TL Paprikapulver</li>
+            <li>&frac12; TL Knoblauchpulver</li>
+            <li>Salz und Pfeffer</li>
+            <li>Sesam zum Bestreuen</li>
+          </ul>
+        </div>
+        <div class="recipe-box-section">
+          <h3>Zubereitung</h3>
+          <ol class="recipe-instructions">
+            <li>Frischk&auml;se mit geriebenem Gouda, Ei und Gew&uuml;rzen in einer Sch&uuml;ssel verr&uuml;hren.</li>
+            <li>Bl&auml;tterteig ausrollen und in 12 gleich gro&szlig;e Quadrate schneiden.</li>
+            <li>Je einen Essl&ouml;ffel K&auml;sef&uuml;llung auf jedes Quadrat geben und die Ecken zur Mitte falten.</li>
+            <li>K&auml;se-Puffs mit etwas Wasser bestreichen und mit Sesam bestreuen.</li>
+            <li>Im Airfryer bei 180 &deg;C etwa 12&ndash;15 Minuten goldbraun backen.</li>
+          </ol>
+        </div>
+        <div class="recipe-box-actions">
+          <button>Drucken</button>
+          <button>Speichern</button>
+          <button>Teilen</button>
+        </div>
+      </div>
+
+      <div class="inline-newsletter">
+        <h4>&#9993; T&auml;gliche Rezeptideen direkt ins Postfach</h4>
+        <p>Melde dich f&uuml;r unseren kostenlosen Newsletter an!</p>
+        <div class="inline-newsletter-form">
+          <input type="email" placeholder="Deine E-Mail-Adresse">
+          <button>Anmelden</button>
         </div>
       </div>
     </div>
