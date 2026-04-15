@@ -515,7 +515,10 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    transition: opacity 0.15s;
   }
+  .panel-before .bc:hover { opacity: 0.85; }
+  .panel-before .bc:hover .bc-title { text-decoration: underline; }
   .panel-before .bc-img {
     width: 100%;
     aspect-ratio: 4/3;
@@ -548,6 +551,7 @@
   .panel-before .bc-meta .bc-ad { font-weight: 400; }
   .panel-before .bc-cta {
     align-self: flex-start;
+    margin-top: auto;
     display: inline-block;
     padding: 4px 14px;
     border: 1px solid #999;
@@ -975,7 +979,7 @@
       <a href="#">Rezepte</a>
       <a href="#" class="active">Backen</a>
       <a href="#">Schnelle Rezepte</a>
-      <a href="#">Backen</a>
+      <a href="#">Hei&szlig;luftfritteuse</a>
       <a href="#">Magazin</a>
       <a href="#">&Uuml;ber uns</a>
     </nav>
